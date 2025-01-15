@@ -1,11 +1,7 @@
 <?php
-for ($i = 0; $i <= 1337; $i++) {
-    if ($i == 26 || $i == 37 || $i == 88 || $i == 1111) {
-        continue; // Passe au nombre suivant
-    }
-    echo "$i<br>";
+$str = "Tous ces instants seront perdus dans le temps comme les larmes sous la pluie.";
+
+for ($i = 0; $i < strlen($str); $i += 2) {
+    echo $str[$i];
 }
 ?>
-
-
-
