@@ -1,5 +1,9 @@
 <?php
-$array = ["nom" => $_POST["nom"] ,"prenom" => $_POST["prenom"],"age" => $_POST["age"]];
+$array = [
+    "nom" => $_POST["nom"],
+    "prenom" => $_POST["prenom"],
+    "age" => $_POST["age"]
+];
 echo "<table border='1' >";
 echo "<thead><tr><th>Argument</th><th>Valeur</th></tr></thead>";
 echo "<tbody>";
@@ -18,17 +22,17 @@ foreach ($array as $key => $value) {
 </head>
 
 <body>
-    <form action="index.php" method="post">
+    <form action="index.php" method="POST">
         <label for="nom">Nom :</label>
-        <input type="$_post" id="nom" name="nom" required><br><br>
+        <input type="$_POST" id="nom" name="nom" required><br><br>
 
         <label for="prenom">Prénom :</label>
-        <input type="$_post" id="prenom" name="prenom" required><br><br>
+        <input type="$_POST" id="prenom" name="prenom" required><br><br>
 
         <label for="age">Âge :</label>
-        <input type="$_post" id="age" name="age" min="0" required><br><br>
+        <input type="$_POST" id="age" name="age" min="0" required><br><br>
 
-        <Input type="submit">Envoyer</Input><br><br>
+        <button type="submit">Envoyer</button><br><br>
     </form>
 </body>
 
