@@ -1,34 +1,28 @@
 <?php
-session_start();
-
-if (isset($_SESSION['nbvisites'])) {
-    if ($_SESSION['nbvisites'] == 0) {
-        echo "Bienvenue";
-    } else {
-        echo "Vous avez visité notre site " . $_SESSION['nbvisites'] . " fois<br><br>";
-    }
+if (isset($_COOKIE['nbvisites'])) {
+    $nbvisites = $_COOKIE['nbvisites'] + 1;
+} else {
+    $nbvisites = 1;
 }
-
 if (isset($_POST['reset'])) {
-    $_SESSION['nbvisites'] = 0;
+    $nbvisites = 0;
 }
-
-$_SESSION['nbvisites']++;
+setcookie('nbvisites', $nbvisites, time() + 3600);
+echo $nbvisites;
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Compteur avec cookie</title>
 </head>
-
 <body>
+    <h1>Compteur de visites</h1>
+    
     <form method="post">
-        <input type="submit" name="reset" value="Reset"> 
+        <button type="submit" name="reset">Réinitialiser</button>
     </form>
 </body>
-
 </html>
